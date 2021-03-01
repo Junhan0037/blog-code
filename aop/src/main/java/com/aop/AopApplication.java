@@ -1,5 +1,6 @@
 package com.aop;
 
+import com.aop.aspect.Performance;
 import com.aop.board.Board;
 import com.aop.board.BoardRepository;
 import com.aop.board.BoardService;
@@ -10,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +19,7 @@ import java.util.List;
 
 @SpringBootApplication
 @RestController @RequiredArgsConstructor
-public class Application implements CommandLineRunner {
+public class AopApplication implements CommandLineRunner {
 
     private final BoardService boardService;
     private final BoardRepository boardRepository;
@@ -43,7 +45,12 @@ public class Application implements CommandLineRunner {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(AopApplication.class, args);
+    }
+
+    @Bean
+    public Performance performance() {
+        return new Performance();
     }
 
 }

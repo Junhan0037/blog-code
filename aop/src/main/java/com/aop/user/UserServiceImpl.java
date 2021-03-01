@@ -15,4 +15,9 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
+    @Override
+    public void update(User user) throws Exception {
+        userRepository.save(user);
+    }
+
 }
