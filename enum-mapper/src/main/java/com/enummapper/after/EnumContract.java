@@ -22,7 +22,7 @@ public class EnumContract {
     @Enumerated(EnumType.STRING)
     private CommissionCutting commissionCutting; // 수수료 절삭 (예: 반올림, 올림, 버림)
 
-    public enum CommissionType {
+    public enum CommissionType implements EnumModel {
 
         PERCENT("percent"),
         MONEY("money");
@@ -33,17 +33,19 @@ public class EnumContract {
             this.value = value;
         }
 
+        @Override
         public String getKey() {
             return name();
         }
 
+        @Override
         public String getValue() {
             return value;
         }
 
     }
 
-    public enum CommissionCutting {
+    public enum CommissionCutting implements EnumModel {
         ROUND("round"),
         CEIL("ceil"),
         FLOOR("floor");
@@ -54,10 +56,12 @@ public class EnumContract {
             this.value = value;
         }
 
+        @Override
         public String getKey() {
             return name();
         }
 
+        @Override
         public String getValue() {
             return value;
         }

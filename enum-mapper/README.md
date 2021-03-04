@@ -16,7 +16,7 @@
 
 **Contract.java**
 
-```
+```java
 @Entity
 public class Contract {
 
@@ -79,7 +79,7 @@ domain 인스턴스에 변경이 필요한 이벤트가 있을 경우 **그 이�
 
 **ContractRepository.java**
 
-```
+```java
 public interface ContractRepository extends JpaRepository<Contract, Long>{
     Contract findByCommissionType(String commissionType);
     Contract findByCommissionCutting(String commissionCutting);
@@ -90,7 +90,7 @@ domain클래스와 repository클래스가 생성되었으니 간단한 테스트
 
 **ApplicationTests.java**
 
-```
+```java
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -146,7 +146,7 @@ save & find가 잘되는 것을 확인할 수 있습니다.
 
 **Commission.java**
 
-```
+```java
 public interface Commission {
     String TYPE_PERCENT = "percent";
     String TYPE_MONEY = "money";
@@ -164,7 +164,7 @@ Commission 인터페이스를 통해서 테스트 코드를 작성해보겠습�
 
 (코드 작성중에 확인해보시면 이렇게 자동완성이 지원되는 것을 확인하실 수 있습니다.)
 
-```
+```java
 	@Test
 	public void add_staticVariable() {
 		Contract contract = new Contract(
@@ -196,7 +196,7 @@ enum은 워낙 많은 Java 기본서에서 다루고 있기 때문에 enum에 �
 바로 코드를 작성해보겠습니다. 이전 코드는 남겨둔채로 진행해야 하기에 entity 클래스는 ```EnumContract```로 하겠습니다.
 
 **EnumContract.java**
-```
+```java
     @Column(nullable = false)
     @Enumerated(EnumType.STRING) // enum의 name을 DB에 저장하기 위해, 없을 경우 enum의 숫자가 들어간다.
     private CommissionType commissionType; // 수수료 타입 (예: 퍼센테이지, 금액)
@@ -251,7 +251,7 @@ domain 클래스의 다른 부분은 ```Contract```와 동일하며, 다른 부�
 이렇게 타입을 String에서 enum으로 변경하게 되면 CommissionType과 CommissionCutting은 제한된 범위내에서만 선택이 가능하게 됩니다.  
 테스트 코드를 통해 DB 입출력 결과를 확인해보겠습니다.
 
-```
+```java
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EnumApplicationTests {
@@ -288,7 +288,7 @@ enum을 어떻게 잘 활용하면 될 것 같은 느낌이 들지 않으신가�
 enum의 리스트는 select box 즉, view영역에 제공되어야 하기 때문에 Controller에서 전달하도록 만들어보겠습니다.
 
 **ApiController.java**
-```
+```java
 @RestController
 public class ApiController {
 
@@ -317,7 +317,7 @@ enum은 인스턴스가 아닌 **타입**입니다. 그래서 view로 전달되�
 Dto를 만들기 전, 앞으로의 모든 enum들을 dto에서 사용할 수 있도록 인터페이스를 하나 만들겠습니다.  
 해당 인터페이스의 이름은 ```EnumModel```이라 하겠습니다.  
 **EnumModel.java**
-```
+```java
 public interface EnumModel {
     String getKey();
     String getValue();
@@ -326,7 +326,7 @@ public interface EnumModel {
 enum의 name(좀더 명확한 이름을 위해 key로 하였습니다.)과 value를 사용하기 위해 추상메소드를 추가하였습니다.   
 그리고 CommissionType과 CommissionCutting이 이를 구현(implements)하도록 변경하겠습니다.
 
-```
+```java
 public enum CommissionType implements EnumModel {
 
     PERCENT("percent"),
@@ -382,7 +382,7 @@ Java의 **다형성**으로, 인터페이스를 구현하게 될 경우 Commissi
 Dto의 이름은 ```EnumValue```입니다.
 
 **EnumValue.java**
-```
+```java
 public class EnumValue {
     private String key;
     private String value;
@@ -405,7 +405,8 @@ public class EnumValue {
 
 EnumValue는 생성자 인자로 위에서 만든 EnumModel을 받도록 하여 commissionType, commissionCutting 모두를 받을 수 있습니다.  
 그럼 Controller에 EnumValue를 이용한 메소드를 추가해보겠습니다.
-```
+
+```java
 @GetMapping("/value")
 public Map<String, List<EnumValue>> getEnumValue() {
     Map<String, List<EnumValue>> enumValues = new LinkedHashMap<>();
@@ -451,7 +452,7 @@ enum 타입들을 관리하는 모듈의 이름을 ```EnumMapper```로 하여 �
 
 **EnumMapper.java**
 
-```
+```java
 public class EnumMapper {
     private Map<String, List<EnumValue>> factory = new HashMap<>();
 
@@ -506,7 +507,7 @@ public class EnumMapper {
 
 이렇게 만든 EnumMapper를 ```Bean```으로 등록하겠습니다.  
 **AppConfig.java**
-```
+```java
 @Configuration
 public class AppConfig {
 
@@ -524,7 +525,7 @@ public class AppConfig {
 
 **EnumContract.java**
 
-```
+```java
 public enum CommissionType implements EnumModel {
 
     PERCENT("퍼센트"),
