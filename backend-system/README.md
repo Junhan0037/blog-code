@@ -1,4 +1,4 @@
-## 백엔드 시스템 ![Java_11](https://img.shields.io/badge/java-v11-red?logo=java) ![Spring_Boot](https://img.shields.io/badge/Spring_Boot-v2.4.2-green.svg?logo=spring)
+## 백엔드 시스템 ![Java_11](https://img.shields.io/badge/java-v11-red?logo=java) ![Spring_Boot](https://img.shields.io/badge/Spring_Boot-v2.4.3-green.svg?logo=spring)
 
 ## 목차
 
