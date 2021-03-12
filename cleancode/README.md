@@ -9,3 +9,4 @@
 3. [함수](https://www.notion.so/3-1462ee0974224ae3b9d2007453fc4ebd)
 4. [주석](https://www.notion.so/4-a756b8a4867743c8bfff4bc8c35feec8)
 5. [형식 맞추기](https://www.notion.so/5-bc0089dad17440e5807c73b22bb0130d)
+6. [객체와 자료구조](https://www.notion.so/6-a778a2ec0bed4a1e92938e1024bb8b5a)
