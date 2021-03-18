@@ -11,3 +11,4 @@
 5. [형식 맞추기](https://www.notion.so/5-bc0089dad17440e5807c73b22bb0130d)
 6. [객체와 자료구조](https://www.notion.so/6-a778a2ec0bed4a1e92938e1024bb8b5a)
 7. [오류 처리](https://www.notion.so/7-61da3cdcf63845ab94febb2beb482dbb)
+8. [경계](https://www.notion.so/8-77caedfb15b14437999cbc43d1ef9825)
