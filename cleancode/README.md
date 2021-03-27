@@ -12,4 +12,4 @@
 6. [객체와 자료구조](https://www.notion.so/6-a778a2ec0bed4a1e92938e1024bb8b5a)
 7. [오류 처리](https://www.notion.so/7-61da3cdcf63845ab94febb2beb482dbb)
 8. [경계](https://www.notion.so/8-77caedfb15b14437999cbc43d1ef9825)
-9. [단위 테스트](https://www.notion.so/eabd42b928464e068829e98d0dae1b74)
+9. [단위 테스트](https://www.notion.so/9-d3dc789da767441da12d84ec429019fc)
