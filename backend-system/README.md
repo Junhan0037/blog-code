@@ -8,5 +8,6 @@
 4. [I/O bound 애플리케이션](https://www.notion.so/I-O-bound-987dda34c7cc435986353f9e22d2948c)
 5. [Message Queue를 도입하여 데이터 유실 방지](https://www.notion.so/Message-Queue-3c34d20ca169495f941b27cdae6cca17)
 6. [검색과 분석을 위한 저장소 Elasticsearch(ES)](https://www.notion.so/Elasticsearch-ES-191534928cee43ffb26fc3a4a83f228e)
+7. [Kubernetes](https://www.notion.so/Kubernetes-8bce15523cf24575b39bff425907ca22)
 
 해당 repo는 [현직 대기업 개발자 푸와 함께하는 진짜 백엔드 시스템 실무! - 푸](https://class101.net/products/T6HT0bUDKIH1V5i3Ji2M) 해당 강의를 듣고 정리한 REPO 입니다.
