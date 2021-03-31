@@ -13,3 +13,4 @@
 7. [오류 처리](https://www.notion.so/7-61da3cdcf63845ab94febb2beb482dbb)
 8. [경계](https://www.notion.so/8-77caedfb15b14437999cbc43d1ef9825)
 9. [단위 테스트](https://www.notion.so/9-d3dc789da767441da12d84ec429019fc)
+10. [클래스](https://www.notion.so/10-561a0ef734ba4457aaa4f5ff7e588a62)
